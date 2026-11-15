@@ -39,7 +39,7 @@ ok('/download handles missing checksum honestly', /belum menyertakan SHA256SUMS/
 
 const sc = await get('/showcase');
 const flat = sc.html.replace(/%2F/gi, '/');
-const shots = (flat.match(/showcase\/[a-z-]+-720\.(?:avif|webp)/g) || []).length;
+const shots = (flat.match(/showcase\/[a-z0-9-]+-720\.(?:avif|webp)/g) || []).length;
 ok('#5 six showcase images', shots >= 6, String(shots));
 
 ok(

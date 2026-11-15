@@ -6,6 +6,7 @@ import styles from './ShowcaseGrid.module.css';
 export type Shot = {
   id: string;
   file: string;
+  asset: string;
   title: string;
   caption: string;
   alt: string;
@@ -76,7 +77,7 @@ export default function ShowcaseGrid({ shots }: { shots: Shot[] }) {
               aria-label={`Buka ${s.title}`}
             >
               <Shot
-                file={s.file}
+                file={s.asset}
                 alt={s.alt}
                 width={360}
                 height={800}
@@ -92,7 +93,7 @@ export default function ShowcaseGrid({ shots }: { shots: Shot[] }) {
         {current && (
           <div className={styles.inner}>
             <Shot
-              file={current.file}
+              file={current.asset}
               alt={current.alt}
               width={current.w}
               height={current.h}

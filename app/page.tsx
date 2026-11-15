@@ -56,7 +56,7 @@ export default async function Home() {
           {teaser.map((shot) => (
             <figure key={shot.id} className={styles.teaserFig}>
               <Shot
-                file={shot.file}
+                file={shot.asset}
                 alt={shot.alt}
                 width={360}
                 height={800}

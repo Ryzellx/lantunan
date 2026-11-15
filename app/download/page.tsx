@@ -4,6 +4,7 @@ import { getRelease } from '@/lib/release';
 import { formatBytes } from '@/lib/format';
 import { PERMISSIONS } from '@/lib/site';
 import DownloadBlock from '@/components/DownloadBlock';
+import showcaseData from '@/data/showcase.json';
 import VariantPicker from '@/components/VariantPicker';
 import styles from './page.module.css';
 
@@ -147,7 +148,7 @@ export default async function DownloadPage() {
         <h2 id="shot">Sekilas tampilan</h2>
         <div className={styles.shot}>
           <Shot
-            file="home"
+            file={showcaseData.screens.find((s) => s.id === 'home')?.asset ?? 'home'}
             alt="Layar Home Lantunan dengan rekomendasi playlist"
             width={360}
             height={800}

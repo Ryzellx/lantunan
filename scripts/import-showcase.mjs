@@ -9,6 +9,7 @@
  */
 import sharp from 'sharp';
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { basename, join } from 'node:path';
 
 const dir = process.argv[2];
@@ -41,6 +42,8 @@ for (const name of files) {
   }
   const input = join(dir, name);
   const meta = await sharp(input).metadata();
+  const digest = createHash('sha1').update(await readFile(input)).digest('hex').slice(0, 8);
+  const asset = `${spec.file}-${digest}`;
   const cropTop = Number(spec.cropTop ?? 0);
   const pipeline = () => {
     let img = sharp(input).flatten({ background: '#0c0b0e' });
@@ -53,15 +56,16 @@ for (const name of files) {
   const cropH = cropTop > 0 && meta.height ? meta.height - cropTop : meta.height ?? 2400;
   for (const width of WIDTHS) {
     const base = pipeline().resize({ width, withoutEnlargement: true });
-    await base.clone().avif({ quality: 62, effort: 5 }).toFile(`public/showcase/${spec.file}-${width}.avif`);
-    await base.clone().webp({ quality: 80 }).toFile(`public/showcase/${spec.file}-${width}.webp`);
+    await base.clone().avif({ quality: 62, effort: 5 }).toFile(`public/showcase/${asset}-${width}.avif`);
+    await base.clone().webp({ quality: 80 }).toFile(`public/showcase/${asset}-${width}.webp`);
     if (width === 360 || width === 720) {
-      await base.clone().jpeg({ quality: 82, mozjpeg: true }).toFile(`public/showcase/${spec.file}-${width}.jpg`);
+      await base.clone().jpeg({ quality: 82, mozjpeg: true }).toFile(`public/showcase/${asset}-${width}.jpg`);
     }
   }
   entries.push({
     id: spec.file,
     file: spec.file,
+    asset,
     title: spec.title,
     caption: spec.caption,
     alt: spec.alt,
@@ -70,7 +74,7 @@ for (const name of files) {
     order: order++,
     source: 'device',
   });
-  console.log('imported', name, '->', spec.file);
+  console.log('imported', name, '->', asset);
 }
 
 if (!entries.length) {
