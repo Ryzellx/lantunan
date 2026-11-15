@@ -29,13 +29,13 @@ export default function CoverOrbit({ className = '' }: { className?: string }) {
 
       let renderer: import('three').WebGLRenderer;
       try {
-        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'low-power' });
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
       } catch {
         return;
       }
 
-      const width = host.clientWidth;
-      const height = host.clientHeight;
+      const width = Math.max(host.clientWidth, 1);
+      const height = Math.max(host.clientHeight, 1);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setSize(width, height, false);
       renderer.domElement.setAttribute('aria-hidden', 'true');
@@ -43,42 +43,44 @@ export default function CoverOrbit({ className = '' }: { className?: string }) {
       setWebgl(true);
 
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 100);
-      camera.position.set(0, 0.15, 7.2);
+      const camera = new THREE.PerspectiveCamera(44, width / height, 0.1, 100);
+      camera.position.set(0, 0, 5.8);
 
       const group = new THREE.Group();
+      group.scale.setScalar(0.86);
       scene.add(group);
 
-      const renderOnce = () => renderer.render(scene, camera);
-      const loader = new THREE.TextureLoader();
-      const radius = 3.05;
-      const frameGeo = new THREE.PlaneGeometry(1.72, 1.72);
-      const artGeo = new THREE.PlaneGeometry(1.6, 1.6);
+      const radius = 1.5;
+      const frameGeo = new THREE.PlaneGeometry(1.92, 1.92);
+      const artGeo = new THREE.PlaneGeometry(1.8, 1.8);
 
       const materials: import('three').Material[] = [];
       const geometries = [frameGeo, artGeo];
+      const pivots: import('three').Object3D[] = [];
 
       COVERS.forEach((cover, i) => {
         const angle = (i / COVERS.length) * Math.PI * 2;
-        const pivot = new THREE.Group();
-        pivot.position.set(Math.sin(angle) * radius, Math.cos(angle * 1.7) * 0.28, Math.cos(angle) * radius);
-        pivot.rotation.y = -angle;
+        const pivot = new THREE.Object3D();
+        pivot.position.set(Math.sin(angle) * radius, 0, Math.cos(angle) * radius);
 
-        const frameMat = new THREE.MeshBasicMaterial({ color: 0x1d1a24, transparent: true, opacity: 0.96 });
+        const frameMat = new THREE.MeshBasicMaterial({
+          color: 0x1d1a24,
+          transparent: true,
+          opacity: 0.95,
+          side: THREE.DoubleSide,
+        });
         const frame = new THREE.Mesh(frameGeo, frameMat);
-        frame.position.z = -0.03;
+        frame.position.z = -0.02;
         pivot.add(frame);
 
-        const tex = loader.load(cover.src, () => {
-          if (reduce) renderOnce();
-        });
+        const tex = new THREE.TextureLoader().load(cover.src);
         tex.colorSpace = THREE.SRGBColorSpace;
         tex.anisotropy = 4;
-        const artMat = new THREE.MeshBasicMaterial({ map: tex, transparent: true });
-        const art = new THREE.Mesh(artGeo, artMat);
-        pivot.add(art);
+        const artMat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, side: THREE.DoubleSide });
+        pivot.add(new THREE.Mesh(artGeo, artMat));
 
         materials.push(frameMat, artMat);
+        pivots.push(pivot);
         group.add(pivot);
       });
 
@@ -86,6 +88,7 @@ export default function CoverOrbit({ className = '' }: { className?: string }) {
       let target = 0;
       let dragging = false;
       let lastX = 0;
+      let elapsed = 0;
 
       const onPointerDown = (e: PointerEvent) => {
         dragging = true;
@@ -94,9 +97,8 @@ export default function CoverOrbit({ className = '' }: { className?: string }) {
       };
       const onPointerMove = (e: PointerEvent) => {
         if (!dragging) return;
-        const dx = e.clientX - lastX;
+        target += (e.clientX - lastX) * 0.007;
         lastX = e.clientX;
-        target += dx * 0.006;
       };
       const onPointerUp = () => {
         dragging = false;
@@ -107,31 +109,34 @@ export default function CoverOrbit({ className = '' }: { className?: string }) {
       host.addEventListener('pointerup', onPointerUp);
       host.addEventListener('pointercancel', onPointerUp);
 
-      let raf = 0;
-      let visible = true;
-      const io = new IntersectionObserver((entries) => {
-        visible = entries[0]?.isIntersecting ?? true;
-      });
-      io.observe(host);
+      // tiap cover selalu menghadap kamera, jadi tidak ada bidang punggung yang hilang
+      const place = () => {
+        group.rotation.y = spin;
+        for (let i = 0; i < pivots.length; i += 1) {
+          const p = pivots[i];
+          p.position.y = Math.sin(elapsed * 0.7 + i * 1.3) * 0.07;
+          p.lookAt(camera.position);
+        }
+      };
 
+      const render = () => renderer.render(scene, camera);
+
+      let raf = 0;
       const clock = new THREE.Clock();
       const tick = () => {
         raf = requestAnimationFrame(tick);
-        if (!visible) return;
         const dt = Math.min(clock.getDelta(), 0.05);
-        if (!reduce && !dragging) target += dt * 0.16;
-        spin += (target - spin) * 0.08;
-        group.rotation.y = spin;
-        group.rotation.x = Math.sin(spin * 0.6) * 0.03;
-        renderer.render(scene, camera);
+        elapsed += dt;
+        if (!dragging) target += dt * 0.22;
+        spin += (target - spin) * 0.07;
+        place();
+        render();
       };
 
-      if (reduce) {
-        group.rotation.y = 0.35;
-        renderer.render(scene, camera);
-      } else {
-        tick();
-      }
+      place();
+      render();
+
+      if (!reduce) tick();
 
       const onResize = () => {
         const w = host.clientWidth;
@@ -140,24 +145,22 @@ export default function CoverOrbit({ className = '' }: { className?: string }) {
         renderer.setSize(w, h, false);
         camera.aspect = w / h;
         camera.updateProjectionMatrix();
-        if (reduce) renderer.render(scene, camera);
+        if (reduce) render();
       };
       const ro = new ResizeObserver(onResize);
       ro.observe(host);
 
       cleanup = () => {
         cancelAnimationFrame(raf);
-        io.disconnect();
         ro.disconnect();
         host.removeEventListener('pointerdown', onPointerDown);
         host.removeEventListener('pointermove', onPointerMove);
         host.removeEventListener('pointerup', onPointerUp);
         host.removeEventListener('pointercancel', onPointerUp);
         geometries.forEach((g) => g.dispose());
-        materials.forEach((m) => m.dispose());
         materials.forEach((m) => {
-          const map = (m as import('three').MeshBasicMaterial).map;
-          map?.dispose();
+          (m as import('three').MeshBasicMaterial).map?.dispose();
+          m.dispose();
         });
         renderer.dispose();
         renderer.domElement.remove();
@@ -173,14 +176,14 @@ export default function CoverOrbit({ className = '' }: { className?: string }) {
   return (
     <div className={`${styles.wrap} ${className}`}>
       <div ref={hostRef} className={`${styles.canvas} ${webgl ? styles.live : ''}`} />
-      <ul className={styles.fallback} aria-hidden={webgl}>
+      <ul className={styles.fallback}>
         {COVERS.map((c) => (
           <li key={c.src}>
             <img src={c.src} alt={`${c.title} oleh ${c.artist}`} width={512} height={512} loading="lazy" />
           </li>
         ))}
       </ul>
-      <p className={styles.caption}>Cover album yang diputar di aplikasi. Geser untuk memutar.</p>
+      <p className={styles.caption}>Cover dari lagu yang kamu putar. Geser untuk memutar.</p>
     </div>
   );
 }

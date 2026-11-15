@@ -15,3 +15,12 @@
 .live + .fallback { display: none; }
 .caption { margin: 0.75rem 0 0; color: var(--muted); font-size: var(--step-2); }
 @media (max-width: 900px) { .canvas { max-height: 340px; } }
+
+.canvas::after {
+  content: '';
+  position: absolute; inset: 12% 8% 18%;
+  background: radial-gradient(circle at 50% 55%, rgba(205, 92, 255, 0.22), transparent 62%);
+  filter: blur(28px);
+  z-index: -1;
+  pointer-events: none;
+}

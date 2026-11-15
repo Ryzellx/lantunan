@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Logo from './Logo';
 import styles from './SiteHeader.module.css';
 
 const NAV = [
@@ -13,8 +14,8 @@ export default function SiteHeader() {
     <header className={styles.header}>
       <div className={`wrap ${styles.inner}`}>
         <Link href="/" className={styles.brand} aria-label="Lantunan, beranda">
-          <span className={styles.mark} aria-hidden="true" />
-          Lantunan
+          <Logo className={styles.logo} />
+          <span className={styles.word}>Lantunan</span>
         </Link>
         <nav aria-label="Navigasi utama">
           <ul className={styles.nav}>

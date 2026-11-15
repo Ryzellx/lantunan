@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Logo from './Logo';
 import styles from './SiteFooter.module.css';
 
 const BUILD_DATE = new Intl.DateTimeFormat('id-ID', {
@@ -10,8 +11,13 @@ export default function SiteFooter() {
     <footer className={styles.footer}>
       <div className={`wrap ${styles.grid}`}>
         <div>
-          <p className={styles.name}>Lantunan</p>
-          <p className="muted">Klien YouTube Music untuk Android. Lisensi GPL-3.0.</p>
+          <p className={styles.name}>
+            <Logo className={styles.logo} />
+            Lantunan
+          </p>
+          <p className="muted">
+            Musik tanpa iklan, lirik yang mengalir, dan unduhan offline. Semua dalam satu APK.
+          </p>
         </div>
         <nav aria-label="Tautan situs">
           <ul className={styles.list}>
@@ -22,18 +28,17 @@ export default function SiteFooter() {
             <li><Link href="/privacy">Privasi</Link></li>
           </ul>
         </nav>
-        <nav aria-label="Tautan proyek">
+        <nav aria-label="Sorotan">
           <ul className={styles.list}>
-            <li><a href="https://github.com/Ryzellx/lantunan-releases" rel="noopener">Rilis APK</a></li>
-            <li><a href="https://github.com/Ryzellx/lantunan-releases/blob/main/LICENSE" rel="noopener">Lisensi GPL-3.0</a></li>
-            <li><a href="https://github.com/Ryzellx" rel="noopener">Ryzellx</a></li>
+            <li><Link href="/download#banding">Bandingkan varian</Link></li>
+            <li><Link href="/download#panduan">Cara memasang</Link></li>
+            <li><Link href="/showcase">Tampilan aplikasi</Link></li>
+            <li><Link href="/faq">Pertanyaan umum</Link></li>
           </ul>
         </nav>
       </div>
       <div className={`wrap ${styles.base}`}>
-        <p className="muted">
-          Dibangun dari Sakayori Music, InnerTune, dan OuterTune. Situs dibangun {BUILD_DATE}.
-        </p>
+        <p className="muted">Lantunan untuk Android. Situs diperbarui {BUILD_DATE}.</p>
       </div>
     </footer>
   );
