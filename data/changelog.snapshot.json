@@ -1,5 +1,19 @@
 [
   {
+    "tag": "v2.1.49",
+    "name": "v2.1.49",
+    "publishedAt": "2026-11-15T15:05:46Z",
+    "notes": "Lantunan v2.1.49 — fix lirik: LrcLib kini validasi judul+artis (termasuk qualifier versi Remix/Live/Acoustic) sebelum memilih lirik, jadi lagu lain yang durasinya mirip tidak lagi kepilih. (Mirror dari Ryzellx/lantunankotlin)",
+    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.49"
+  },
+  {
+    "tag": "v2.1.48",
+    "name": "v2.1.48",
+    "publishedAt": "2026-11-15T13:35:04Z",
+    "notes": "## v2.1.48\r\n\r\n* Fix: lirik masih salah versi (mis. \"Die For You (Remix)\" tampil lirik versi slowed 260 detik, timing telat ~15 detik) — penyebabnya lirik versi salah yang sudah ter-cache tidak pernah dibuang. Sekarang: (1) lirik cache yang timestamp-nya tidak cocok dengan durasi lagu dibuang otomatis dan di-fetch ulang; (2) provider yang mengembalikan lirik versi lain (timestamp melewati durasi lagu) dilewati, lanjut ke provider berikutnya; (3) judul pencarian tidak lagi membuang qualifier versi (Remix/Live/Acoustic/dll.) — hanya label \"Official Video/Audio/Lyrics\" yang dibuang — jadi provider mencari versi yang benar, bukan lagu dasarnya\r\n",
+    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.48"
+  },
+  {
     "tag": "v2.1.47",
     "name": "v2.1.47",
     "publishedAt": "2026-11-15T04:39:38Z",
@@ -54,19 +68,5 @@
     "publishedAt": "2026-09-03T11:06:24Z",
     "notes": "* Fix: crash saat daftar/masuk (Firestore protobuf di build rilis)\n* Fix: update harian & stabilitas rutin\n",
     "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.36"
-  },
-  {
-    "tag": "v2.1.35",
-    "name": "2.1.35",
-    "publishedAt": "2026-09-02T13:27:18Z",
-    "notes": "* Fix: crash saat masuk/daftar (konflik protobuf di release build)\n* Remove: tombol Masuk dengan Google\n* Fix: update harian & stabilitas rutin\n",
-    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.35"
-  },
-  {
-    "tag": "v2.1.34",
-    "name": "2.1.34",
-    "publishedAt": "2026-09-02T12:36:58Z",
-    "notes": "* Add: login pakai email atau username, daftar wajib isi username\n* Fix: login Google — akun terpilih otomatis\n* Remove: teks benefit di banner Masuk/Daftar\n* Fix: update harian & stabilitas rutin\n",
-    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.34"
   }
 ]
