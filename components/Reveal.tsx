@@ -18,14 +18,14 @@ export default function Reveal({
     const el = ref.current;
     if (!el) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      el.classList.add(styles.in);
+      el.classList.add(styles.isIn);
       return;
     }
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            el.classList.add(styles.in);
+            el.classList.add(styles.isIn);
             io.disconnect();
           }
         }

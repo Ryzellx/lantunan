@@ -4,7 +4,7 @@
   transition: opacity 320ms var(--ease), transform 320ms var(--ease);
   will-change: opacity, transform;
 }
-.in { opacity: 1; transform: none; }
+.isIn { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
