@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-15T13:36:25.405Z",
+  "generatedAt": "2026-11-15T14:50:08.679Z",
   "version": null,
   "source": "device",
   "screens": [
     {
       "id": "home",
       "file": "home",
-      "asset": "home-ddaba9e5",
+      "asset": "home-09a06a24",
       "title": "Home",
       "caption": "Favorit yang terlupakan dan pilihan cepat",
       "alt": "Layar Home Lantunan dengan baris Favorit yang terlupakan dan Pilihan cepat",
