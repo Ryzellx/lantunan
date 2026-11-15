@@ -1,0 +1,11 @@
+.wrap h2 { margin-bottom: 0.75rem; }
+.statusRow { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.statusRow p { margin: 0; }
+.badge {
+  color: #1a1105; background: var(--warn); font-weight: 600;
+  padding: 0.2rem 0.55rem; border-radius: 6px; font-size: var(--step-1);
+}
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.helper { margin-top: 1.25rem; color: var(--muted); font-size: var(--step-2); }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }

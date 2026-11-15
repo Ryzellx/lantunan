@@ -1,0 +1,13 @@
+.list { margin-top: 1.5rem; border-top: 1px solid var(--line); }
+.item { border-bottom: 1px solid var(--line); }
+.item summary {
+  cursor: pointer; padding: 1.1rem 2rem 1.1rem 0; position: relative;
+  font-weight: 600; list-style: none;
+}
+.item summary::-webkit-details-marker { display: none; }
+.item summary::after {
+  content: '+'; position: absolute; right: 0.25rem; top: 0.9rem;
+  color: var(--accent); font-size: var(--step-5); line-height: 1;
+}
+.item[open] summary::after { content: '-'; }
+.item p { padding-bottom: 1.1rem; margin: 0; max-width: 68ch; }

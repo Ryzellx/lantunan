@@ -1,0 +1,66 @@
+{
+  "generatedAt": null,
+  "version": null,
+  "screens": [
+    {
+      "id": "home",
+      "file": "home",
+      "title": "Home",
+      "caption": "Rekomendasi playlist dan quick picks",
+      "alt": "Layar Home Lantunan dengan kartu playlist dan lagu cepat",
+      "w": 1080,
+      "h": 2400,
+      "order": 0
+    },
+    {
+      "id": "now-playing",
+      "file": "now-playing",
+      "title": "Player",
+      "caption": "Pemutar utama",
+      "alt": "Layar Now Playing dengan cover album besar dan kontrol pemutaran",
+      "w": 1080,
+      "h": 2400,
+      "order": 1
+    },
+    {
+      "id": "lyrics",
+      "file": "lyrics",
+      "title": "Lirik",
+      "caption": "Lirik tersinkron",
+      "alt": "Layar lirik dengan lirik tersinkron yang menyorot baris aktif",
+      "w": 1080,
+      "h": 2400,
+      "order": 2
+    },
+    {
+      "id": "artist",
+      "file": "artist",
+      "title": "Halaman artis",
+      "caption": "Profil artis dan lagu teratas",
+      "alt": "Halaman artis dengan foto, jumlah pendengar, dan lagu teratas",
+      "w": 1080,
+      "h": 2400,
+      "order": 3
+    },
+    {
+      "id": "together",
+      "file": "together",
+      "title": "Dengar bersama",
+      "caption": "Ruang dengar bersama",
+      "alt": "Layar Listen Together dengan kolom nama pengguna dan kode ruang",
+      "w": 1080,
+      "h": 2400,
+      "order": 4
+    },
+    {
+      "id": "recognize",
+      "file": "recognize",
+      "title": "Kenali musik",
+      "caption": "Kenali lagu yang sedang diputar",
+      "alt": "Dialog kenali musik yang mendengarkan audio sekitar",
+      "w": 1080,
+      "h": 2400,
+      "order": 5
+    }
+  ]
+}

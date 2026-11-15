@@ -1,0 +1,14 @@
+.dl { padding-top: 1rem; }
+.showcaseTeaser { border-top: 1px solid var(--line); }
+.teaserHead {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem; margin-bottom: 1.5rem;
+}
+.teaserHead a { text-decoration: none; font-size: var(--step-2); }
+.teaserGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.teaserFig { margin: 0; }
+.teaserFig img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+.teaserFig figcaption { margin-top: 0.5rem; }
+.link { margin-top: 1.5rem; }
+@media (max-width: 720px) { .teaserGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .teaserGrid { grid-template-columns: 1fr; } }

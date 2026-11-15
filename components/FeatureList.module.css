@@ -1,0 +1,14 @@
+.list { list-style: none; margin: 1.5rem 0 0; padding: 0; columns: 2; column-gap: 3rem; }
+.row {
+  break-inside: avoid; display: grid; grid-template-columns: 2.5rem 1fr; gap: 0.75rem;
+  padding-block: 1.1rem; border-top: 1px solid var(--line);
+}
+.row:first-child,
+.row:nth-child(2) { border-top: 0; }
+.row h3 { font-size: var(--step-4); margin-bottom: 0.25rem; }
+.row p { margin: 0; font-size: var(--step-2); }
+.n { color: var(--accent); padding-top: 0.2rem; }
+@media (max-width: 720px) {
+  .list { columns: 1; }
+  .row:nth-child(2) { border-top: 1px solid var(--line); }
+}

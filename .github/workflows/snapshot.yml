@@ -1,0 +1,28 @@
+name: snapshot
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Refresh release snapshot
+        run: node scripts/write-snapshot.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit if changed
+        run: |
+          git config user.name github-actions
+          git config user.email actions@users.noreply.github.com
+          git add data/*.snapshot.json
+          git diff --staged --quiet || git commit -m "chore: refresh release snapshot"
+          git push

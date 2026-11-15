@@ -1,0 +1,23 @@
+.card {
+  display: flex; flex-direction: column; gap: 0.6rem;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.35rem;
+  transition: border-color 120ms ease-out;
+}
+.card:hover { border-color: #453f52; }
+.recommended { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.head { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.head h3 { font-size: var(--step-4); }
+.badge,
+.badgeAccent {
+  font-size: var(--step-1); font-weight: 600; padding: 0.2rem 0.5rem;
+  border-radius: 6px; border: 1px solid var(--line); color: var(--muted);
+}
+.badgeAccent { background: var(--accent-soft); border-color: var(--accent); color: var(--text); }
+.blurb { color: var(--muted); font-size: var(--step-2); margin: 0; }
+.meta { color: var(--muted); margin: 0 0 0.4rem; }
+.action { width: 100%; margin-top: auto; }
+.missing { color: var(--warn); font-size: var(--step-2); margin: 0; }
+.sha { margin-top: 0.5rem; font-size: var(--step-2); }
+.sha summary { cursor: pointer; color: var(--muted); }
+.sha p { margin: 0.4rem 0 0; overflow-wrap: anywhere; }

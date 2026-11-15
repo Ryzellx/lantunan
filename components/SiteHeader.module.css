@@ -1,0 +1,20 @@
+.header {
+  position: sticky; top: 0; z-index: 40;
+  background: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+.inner { display: flex; align-items: center; gap: 1.5rem; min-height: 64px; }
+.brand {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font-family: var(--font-display), sans-serif; font-weight: 700;
+  font-size: var(--step-4); text-decoration: none; letter-spacing: -0.01em;
+}
+.mark { width: 10px; height: 10px; background: var(--accent); border-radius: 2px; transform: rotate(45deg); }
+.nav { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+.link { color: var(--muted); text-decoration: none; font-size: var(--step-2); }
+.link:hover { color: var(--text); }
+.cta { margin-left: auto; }
+@media (max-width: 720px) {
+  .nav { display: none; }
+  .cta { min-height: 40px; padding: 0.5rem 0.85rem; font-size: var(--step-2); }
+}
