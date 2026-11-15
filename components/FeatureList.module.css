@@ -12,3 +12,7 @@
   .list { columns: 1; }
   .row:nth-child(2) { border-top: 1px solid var(--line); }
 }
+
+.row { transition: border-color 160ms ease-out; }
+.row:hover { border-color: #453f52; }
+.row:hover .n { color: var(--text); }

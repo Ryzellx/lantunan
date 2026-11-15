@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ShowcaseGrid, { type Shot } from '@/components/ShowcaseGrid';
+import CoverOrbit from '@/components/CoverOrbit';
 import showcase from '@/data/showcase.json';
 import styles from './page.module.css';
 
@@ -28,6 +29,10 @@ export default function ShowcasePage() {
       </section>
 
       <div className="wrap">
+        <CoverOrbit />
+      </div>
+
+      <div className="wrap section">
         <ShowcaseGrid shots={shots} />
       </div>
     </>

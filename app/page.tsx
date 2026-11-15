@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Shot from '@/components/Shot';
+import Reveal from '@/components/Reveal';
 import { getRelease } from '@/lib/release';
 import { formatBytes, formatDate } from '@/lib/format';
 import Hero from '@/components/Hero';
@@ -29,9 +30,9 @@ export default async function Home() {
             : 'Unduh untuk Android'
         }
         secondaryHref="/showcase"
-        heroShot="now-playing"
       />
 
+      <Reveal>
       <FactStrip
         items={[
           { label: 'Versi terbaru', value: release.tag || 'Belum tersedia' },
@@ -40,12 +41,13 @@ export default async function Home() {
           { label: 'Lisensi', value: 'GPL-3.0' },
         ]}
       />
+      </Reveal>
 
       <div className={`wrap section ${styles.dl}`}>
         <DownloadBlock release={release} />
       </div>
 
-      <section className={`wrap section ${styles.showcaseTeaser}`} aria-labelledby="showcase-teaser">
+      <Reveal><section className={`wrap section ${styles.showcaseTeaser}`} aria-labelledby="showcase-teaser">
         <div className={styles.teaserHead}>
           <h2 id="showcase-teaser">Tampilannya, bukan mockup</h2>
           <Link href="/showcase" className="muted">Lihat semua</Link>
@@ -64,20 +66,20 @@ export default async function Home() {
             </figure>
           ))}
         </div>
-      </section>
+      </section></Reveal>
 
-      <section className="wrap section" aria-labelledby="fitur">
+      <Reveal><section className="wrap section" aria-labelledby="fitur">
         <h2 id="fitur">Yang kamu dapat</h2>
         <FeatureList />
-      </section>
+      </section></Reveal>
 
-      <section className="wrap section" aria-labelledby="faq-home">
+      <Reveal><section className="wrap section" aria-labelledby="faq-home">
         <h2 id="faq-home">Pertanyaan yang sering muncul</h2>
         <FaqList limit={6} />
         <p className={styles.link}>
           <Link href="/faq">Semua pertanyaan</Link>
         </p>
-      </section>
+      </section></Reveal>
     </>
   );
 }

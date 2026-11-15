@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Shot from './Shot';
+import CoverOrbit from './CoverOrbit';
 import styles from './Hero.module.css';
 
 type Props = {
@@ -8,10 +8,9 @@ type Props = {
   primaryHref: string;
   primaryLabel: string;
   secondaryHref: string;
-  heroShot: string;
 };
 
-export default function Hero({ headline, body, primaryHref, primaryLabel, secondaryHref, heroShot }: Props) {
+export default function Hero({ headline, body, primaryHref, primaryLabel, secondaryHref }: Props) {
   return (
     <section className={`wrap ${styles.hero}`} aria-labelledby="hero-title">
       <div className={styles.text}>
@@ -24,14 +23,7 @@ export default function Hero({ headline, body, primaryHref, primaryLabel, second
         </div>
       </div>
       <div className={styles.device}>
-        <Shot
-          file={heroShot}
-          alt="Layar Now Playing Lantunan di ponsel Android"
-          width={540}
-          height={1200}
-          priority
-          sizes="(max-width: 900px) 55vw, 340px"
-        />
+        <CoverOrbit />
       </div>
     </section>
   );

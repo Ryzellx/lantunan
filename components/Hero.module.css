@@ -18,3 +18,22 @@
   .device { max-width: 280px; margin-inline: auto; order: -1; }
 }
 @media (prefers-reduced-motion: reduce) { .device img { transform: none; } }
+
+.eyebrow, .text h1, .body, .actions {
+  animation: heroRise 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.text h1 { animation-delay: 60ms; }
+.body { animation-delay: 120ms; }
+.actions { animation-delay: 180ms; }
+.device { animation: heroFade 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both; animation-delay: 140ms; }
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eyebrow, .text h1, .body, .actions, .device { animation: none; }
+}

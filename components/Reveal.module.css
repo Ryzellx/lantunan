@@ -1,0 +1,10 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(0.995);
+  transition: opacity 320ms var(--ease), transform 320ms var(--ease);
+  will-change: opacity, transform;
+}
+.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
