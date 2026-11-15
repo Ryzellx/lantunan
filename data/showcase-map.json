@@ -1,0 +1,58 @@
+{
+  "home.jpg": {
+    "file": "home",
+    "title": "Home",
+    "caption": "Favorit yang terlupakan dan pilihan cepat",
+    "alt": "Layar Home Lantunan dengan baris Favorit yang terlupakan dan Pilihan cepat",
+    "cropTop": 56,
+    "order": 0
+  },
+  "now-playing.jpg": {
+    "file": "now-playing",
+    "title": "Pemutar",
+    "caption": "Pemutar utama dengan kontrol lengkap",
+    "alt": "Layar pemutar Lantunan dengan judul lagu, artis, dan kontrol pemutaran",
+    "cropTop": 56,
+    "order": 1
+  },
+  "playlist.jpg": {
+    "file": "playlist",
+    "title": "Playlist",
+    "caption": "Daftar putar dengan urutan kustom",
+    "alt": "Layar playlist Lantunan berisi 60 lagu dengan total durasi dan urutan kustom",
+    "cropTop": 56,
+    "order": 2
+  },
+  "search.jpg": {
+    "file": "search",
+    "title": "Pencarian",
+    "caption": "Hasil teratas dengan tab lagu, video, album",
+    "alt": "Layar pencarian Lantunan dengan hasil teratas dan tab Semua, Lagu, Video, Album, Artis",
+    "cropTop": 56,
+    "order": 3
+  },
+  "artist.jpg": {
+    "file": "artist",
+    "title": "Halaman artis",
+    "caption": "Profil artis dan tombol langganan",
+    "alt": "Halaman artis Lantunan dengan nama artis dan tombol Subscribe",
+    "cropTop": 56,
+    "order": 4
+  },
+  "together.jpg": {
+    "file": "together",
+    "title": "Dengar bersama",
+    "caption": "Buat atau gabung ruangan dengan kode",
+    "alt": "Layar Listen Together Lantunan dengan kolom nama pengguna dan kode ruang",
+    "cropTop": 56,
+    "order": 5
+  },
+  "settings.jpg": {
+    "file": "settings",
+    "title": "Pengaturan",
+    "caption": "Akun, tampilan, Android Auto, privasi",
+    "alt": "Layar pengaturan Lantunan dengan bagian akun, antarmuka, Android Auto, dan privasi",
+    "cropTop": 56,
+    "order": 6
+  }
+}

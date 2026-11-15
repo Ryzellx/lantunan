@@ -26,11 +26,11 @@ try {
   process.exit(1);
 }
 
-const WIDTHS = [360, 720, 1080];
+const WIDTHS = [360, 720];
 await mkdir('public/showcase', { recursive: true });
 
 const entries = [];
-const files = (await readdir(dir)).filter((f) => f.toLowerCase().endsWith('.png')).sort();
+const files = (await readdir(dir)).filter((f) => /\.(png|jpe?g)$/i.test(f)).sort((a, b) => (map[a]?.order ?? 99) - (map[b]?.order ?? 99));
 let order = 0;
 
 for (const name of files) {
@@ -41,10 +41,18 @@ for (const name of files) {
   }
   const input = join(dir, name);
   const meta = await sharp(input).metadata();
+  const cropTop = Number(spec.cropTop ?? 0);
+  const pipeline = () => {
+    let img = sharp(input).flatten({ background: '#0c0b0e' });
+    if (cropTop > 0 && meta.height) {
+      img = img.extract({ left: 0, top: cropTop, width: meta.width, height: meta.height - cropTop });
+    }
+    return img;
+  };
+  const cropW = meta.width ?? 1080;
+  const cropH = cropTop > 0 && meta.height ? meta.height - cropTop : meta.height ?? 2400;
   for (const width of WIDTHS) {
-    const base = sharp(input)
-      .flatten({ background: '#0c0b0e' })
-      .resize({ width, withoutEnlargement: true });
+    const base = pipeline().resize({ width, withoutEnlargement: true });
     await base.clone().avif({ quality: 62, effort: 5 }).toFile(`public/showcase/${spec.file}-${width}.avif`);
     await base.clone().webp({ quality: 80 }).toFile(`public/showcase/${spec.file}-${width}.webp`);
     if (width === 360 || width === 720) {
@@ -57,8 +65,8 @@ for (const name of files) {
     title: spec.title,
     caption: spec.caption,
     alt: spec.alt,
-    w: meta.width ?? 1080,
-    h: meta.height ?? 2400,
+    w: cropW,
+    h: cropH,
     order: order++,
     source: 'device',
   });

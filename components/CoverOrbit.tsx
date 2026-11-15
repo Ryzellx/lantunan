@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './CoverOrbit.module.css';
 
 const COVERS = [
-  { src: '/showcase/covers/no-time-to-die.webp', title: 'No Time To Die', artist: 'Billie Eilish' },
-  { src: '/showcase/covers/peace-salam.webp', title: 'Peace Salam', artist: 'Abdulrahman Mohammed' },
-  { src: '/showcase/covers/wherever-you-go.webp', title: 'Wherever You Go', artist: 'Beach House' },
-  { src: '/showcase/covers/basrah-watooh.webp', title: 'Basrah w Atooh', artist: 'Cairokee' },
-  { src: '/showcase/covers/a-prayer.webp', title: 'A Prayer', artist: 'Faraj Suleiman' },
+  { src: '/showcase/covers/falling.webp', title: 'Falling', artist: 'Trevor Daniel' },
+  { src: '/showcase/covers/anything.webp', title: 'anything', artist: 'Adrianne Lenker' },
+  { src: '/showcase/covers/stop-the-wedding.webp', title: 'Stop The Wedding!', artist: 'Ashe' },
+  { src: '/showcase/covers/clairo.webp', title: 'Sofia', artist: 'Clairo' },
+  { src: '/showcase/covers/karol-g.webp', title: 'Si Antes Te Hubiera Conocido', artist: 'KAROL G' },
 ];
 
 export default function CoverOrbit({ className = '' }: { className?: string }) {

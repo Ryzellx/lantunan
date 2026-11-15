@@ -10,3 +10,4 @@ tsconfig.tsbuildinfo
 assets-showcase
 .preview/
 .ci-shots/
+.incoming/
