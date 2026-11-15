@@ -9,7 +9,7 @@
   display: inline-flex; align-items: center; gap: 0.6rem;
   text-decoration: none;
 }
-.logo { display: block; width: 28px; height: 28px; flex: none; }
+.logo { display: block; width: 28px; height: 28px; flex: none; border-radius: 8px; }
 .word {
   font-family: var(--font-display), sans-serif; font-weight: 700;
   font-size: var(--step-4); letter-spacing: -0.015em;
