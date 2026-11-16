@@ -1,29 +1,29 @@
 {
-  "tag_name": "v2.1.49",
-  "name": "v2.1.49",
-  "published_at": "2026-11-15T15:05:46Z",
-  "body": "Lantunan v2.1.49 — fix lirik: LrcLib kini validasi judul+artis (termasuk qualifier versi Remix/Live/Acoustic) sebelum memilih lirik, jadi lagu lain yang durasinya mirip tidak lagi kepilih. (Mirror dari Ryzellx/lantunankotlin)",
-  "html_url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.49",
+  "tag_name": "v2.1.50",
+  "name": "v2.1.50",
+  "published_at": "2026-11-16T08:36:52Z",
+  "body": "Lantunan v2.1.50 — Gaya suara: Normal, Sped up, Slowed + reverb, Nightcore, Lo-fi, 8D, Konser. Mirror dari Ryzellx/lantunankotlin.",
+  "html_url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.50",
   "prerelease": false,
   "draft": false,
   "assets": [
     {
       "name": "Lantunan-izzy.apk",
-      "size": 26841027,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.49/Lantunan-izzy.apk",
+      "size": 26865603,
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.50/Lantunan-izzy.apk",
       "download_count": 1
     },
     {
       "name": "Lantunan-with-Google-Cast.apk",
-      "size": 28313172,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.49/Lantunan-with-Google-Cast.apk",
+      "size": 28321364,
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.50/Lantunan-with-Google-Cast.apk",
       "download_count": 1
     },
     {
       "name": "Lantunan.apk",
-      "size": 26861507,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.49/Lantunan.apk",
-      "download_count": 3
+      "size": 26869699,
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.50/Lantunan.apk",
+      "download_count": 1
     }
   ]
 }
