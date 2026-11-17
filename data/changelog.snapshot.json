@@ -1,5 +1,12 @@
 [
   {
+    "tag": "v2.1.51",
+    "name": "2.1.51",
+    "publishedAt": "2026-11-17T13:16:03Z",
+    "notes": "Lantunan v2.1.51 — kembalikan toggle \"Tampilkan kartu Wrapped\" di Pengaturan > Konten (kartu bisa dimunculkan lagi setelah pernah dibuka). Mirror dari Ryzellx/lantunankotlin.",
+    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.51"
+  },
+  {
     "tag": "v2.1.50",
     "name": "v2.1.50",
     "publishedAt": "2026-11-16T08:36:52Z",
@@ -61,12 +68,5 @@
     "publishedAt": "2026-09-12T13:07:02Z",
     "notes": "* Fix: mini player cuma muncul di Beranda, hilang di tab lain\n* Fix: gagal daftar (PERMISSION_DENIED) — rules device_bindings + pesan error yang jelas\n* Fix: password selalu ter-mask dengan tombol lihat/sembunyikan\n* Fix: logo lama di notifikasi media & lock screen diganti logo baru\n",
     "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.38"
-  },
-  {
-    "tag": "v2.1.37",
-    "name": "2.1.37",
-    "publishedAt": "2026-09-12T03:48:35Z",
-    "notes": "* Fix: crash saat daftar/masuk (kelas protobuf Firestore gak ada di build rilis)\n* Fix: timeout build rilis di CI\n",
-    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.37"
   }
 ]
