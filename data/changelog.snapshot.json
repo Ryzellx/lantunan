@@ -1,5 +1,12 @@
 [
   {
+    "tag": "v2.1.52",
+    "name": "2.1.52",
+    "publishedAt": "2026-11-17T22:59:30Z",
+    "notes": "Lantunan v2.1.52 — semua teks di Wrapped pakai font BBH Bartle (judul, angka, nama lagu/artis/album, tombol), header \"Lantunan\" di Home pakai font yang sama, dan Pilihan Cepat diisi penuh dari lagu yang sering diputar + baru ditambah ke library kalau rekomendasinya tipis. Mirror dari Ryzellx/lantunankotlin.",
+    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.52"
+  },
+  {
     "tag": "v2.1.51",
     "name": "2.1.51",
     "publishedAt": "2026-11-17T13:16:03Z",
@@ -61,12 +68,5 @@
     "publishedAt": "2026-09-13T02:57:12Z",
     "notes": "* Add: ketuk logo profil di Beranda untuk buka halaman profil (jam dengar, top lagu, ganti email/password)\n* Add: entri Profil di bagian paling atas Pengaturan\n",
     "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.39"
-  },
-  {
-    "tag": "v2.1.38",
-    "name": "2.1.38",
-    "publishedAt": "2026-09-12T13:07:02Z",
-    "notes": "* Fix: mini player cuma muncul di Beranda, hilang di tab lain\n* Fix: gagal daftar (PERMISSION_DENIED) — rules device_bindings + pesan error yang jelas\n* Fix: password selalu ter-mask dengan tombol lihat/sembunyikan\n* Fix: logo lama di notifikasi media & lock screen diganti logo baru\n",
-    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.38"
   }
 ]

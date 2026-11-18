@@ -1,29 +1,29 @@
 {
-  "tag_name": "v2.1.51",
-  "name": "2.1.51",
-  "published_at": "2026-11-17T13:16:03Z",
-  "body": "Lantunan v2.1.51 — kembalikan toggle \"Tampilkan kartu Wrapped\" di Pengaturan > Konten (kartu bisa dimunculkan lagi setelah pernah dibuka). Mirror dari Ryzellx/lantunankotlin.",
-  "html_url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.51",
+  "tag_name": "v2.1.52",
+  "name": "2.1.52",
+  "published_at": "2026-11-17T22:59:30Z",
+  "body": "Lantunan v2.1.52 — semua teks di Wrapped pakai font BBH Bartle (judul, angka, nama lagu/artis/album, tombol), header \"Lantunan\" di Home pakai font yang sama, dan Pilihan Cepat diisi penuh dari lagu yang sering diputar + baru ditambah ke library kalau rekomendasinya tipis. Mirror dari Ryzellx/lantunankotlin.",
+  "html_url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.52",
   "prerelease": false,
   "draft": false,
   "assets": [
     {
       "name": "Lantunan-izzy.apk",
       "size": 26869755,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.51/Lantunan-izzy.apk",
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.52/Lantunan-izzy.apk",
       "download_count": 1
     },
     {
       "name": "Lantunan-with-Google-Cast.apk",
       "size": 28325516,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.51/Lantunan-with-Google-Cast.apk",
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.52/Lantunan-with-Google-Cast.apk",
       "download_count": 1
     },
     {
       "name": "Lantunan.apk",
       "size": 26869755,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.51/Lantunan.apk",
-      "download_count": 3
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.52/Lantunan.apk",
+      "download_count": 2
     }
   ]
 }
