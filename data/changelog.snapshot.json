@@ -1,5 +1,19 @@
 [
   {
+    "tag": "v2.1.55",
+    "name": "2.1.55",
+    "publishedAt": "2026-11-20T15:11:45Z",
+    "notes": "Lantunan v2.1.55 — lirik lagu yang diputar muncul lewat Dynamic Island (pill melayang di atas layar, ketuk untuk buka player); bikin Poster pindah dari menu player ke Pustaka; Wrapped yang sudah ditonton sampai selesai tidak muncul lagi di Home, pindah ke Pustaka; Pustaka dipisah jadi baris sendiri-sendiri (Playlist, Lagu, Album, Artis, Podcast, Wrapped, Poster); Home menyapa Selamat pagi/siang/sore/malam sesuai jam. Mirror dari Ryzellx/lantunankotlin.",
+    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.55"
+  },
+  {
+    "tag": "v2.1.54",
+    "name": "2.1.54",
+    "publishedAt": "2026-11-20T14:39:10Z",
+    "notes": "Lantunan v2.1.54 — lirik lagu yang diputar muncul lewat Dynamic Island (pill melayang di atas layar, ketuk untuk buka player); bikin Poster pindah dari menu player ke Pustaka; Wrapped yang sudah ditonton sampai selesai tidak muncul lagi di Home, pindah ke Pustaka; Pustaka dipisah jadi baris sendiri-sendiri (Playlist, Lagu, Album, Artis, Podcast, Wrapped, Poster); Home menyapa Selamat pagi/siang/sore/malam sesuai jam. Mirror dari Ryzellx/lantunankotlin.",
+    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.54"
+  },
+  {
     "tag": "v2.1.52",
     "name": "2.1.52",
     "publishedAt": "2026-11-17T22:59:30Z",
@@ -54,19 +68,5 @@
     "publishedAt": "2026-11-15T02:42:32Z",
     "notes": "Released by @Ryzellx\r\n\r\n\r\n* Add: Poster Lagu — buat poster lagu dari foto + kartu lagu (seret, cubit, putar, 3 gaya kartu, sparkle, stiker, simpan & bagikan); dibuka dari menu titik tiga di pemutar\r\n* Add: Wrapped 2026 — recap tahunan ala Spotify (kartu di Beranda tampil 1 Nov 2026 – 31 Jan 2027, playlist \"Lantunan 2026\")\r\n\r\n",
     "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.41"
-  },
-  {
-    "tag": "v2.1.40",
-    "name": "2.1.40",
-    "publishedAt": "2026-09-13T10:27:34Z",
-    "notes": "* Fix: foto profil sekarang tampil di pojok kanan Beranda (sebelumnya selalu ikon default)\n",
-    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.40"
-  },
-  {
-    "tag": "v2.1.39",
-    "name": "2.1.39",
-    "publishedAt": "2026-09-13T02:57:12Z",
-    "notes": "* Add: ketuk logo profil di Beranda untuk buka halaman profil (jam dengar, top lagu, ganti email/password)\n* Add: entri Profil di bagian paling atas Pengaturan\n",
-    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.39"
   }
 ]
