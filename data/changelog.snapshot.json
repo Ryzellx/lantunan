@@ -1,5 +1,26 @@
 [
   {
+    "tag": "v2.1.59",
+    "name": "2.1.59",
+    "publishedAt": "2026-11-21T02:44:54Z",
+    "notes": "Lantunan v2.1.59 — Dynamic Island lirik dihapus dari aplikasi: pill lirik di dalam aplikasi dan yang melayang di atas aplikasi lain sudah tidak ada lagi. Mirror dari Ryzellx/lantunankotlin.",
+    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.59"
+  },
+  {
+    "tag": "v2.1.58",
+    "name": "2.1.58",
+    "publishedAt": "2026-11-21T02:15:49Z",
+    "notes": "Lantunan v2.1.58 — Dynamic Island dua keadaan: pill kecil (judul lagu + baris lirik yang sedang jalan), ketuk untuk membesar jadi player lengkap (cover besar + judul + artis + lirik + progress + tombol sebelumnya / putar-jeda / berikutnya); ketuk cover besar untuk buka Lantunan. Mirror dari Ryzellx/lantunankotlin.",
+    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.58"
+  },
+  {
+    "tag": "v2.1.57",
+    "name": "2.1.57",
+    "publishedAt": "2026-11-21T01:36:32Z",
+    "notes": "Lantunan v2.1.57 — Dynamic Island kini melayang di atas semua aplikasi (izin \"tampil di atas aplikasi lain\", toggle di Pengaturan > Konten > Misc); pill lirik bisa diseret, ketuk untuk buka player. Mirror dari Ryzellx/lantunankotlin.",
+    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.57"
+  },
+  {
     "tag": "v2.1.55",
     "name": "2.1.55",
     "publishedAt": "2026-11-20T15:11:45Z",
@@ -47,26 +68,5 @@
     "publishedAt": "2026-11-15T13:35:04Z",
     "notes": "## v2.1.48\r\n\r\n* Fix: lirik masih salah versi (mis. \"Die For You (Remix)\" tampil lirik versi slowed 260 detik, timing telat ~15 detik) — penyebabnya lirik versi salah yang sudah ter-cache tidak pernah dibuang. Sekarang: (1) lirik cache yang timestamp-nya tidak cocok dengan durasi lagu dibuang otomatis dan di-fetch ulang; (2) provider yang mengembalikan lirik versi lain (timestamp melewati durasi lagu) dilewati, lanjut ke provider berikutnya; (3) judul pencarian tidak lagi membuang qualifier versi (Remix/Live/Acoustic/dll.) — hanya label \"Official Video/Audio/Lyrics\" yang dibuang — jadi provider mencari versi yang benar, bukan lagu dasarnya\r\n",
     "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.48"
-  },
-  {
-    "tag": "v2.1.47",
-    "name": "v2.1.47",
-    "publishedAt": "2026-11-15T04:39:38Z",
-    "notes": "v2.1.47\r\n\r\n* Fix: link website di halaman Tentang masih ryzell.cyou — diganti jadi ryzellx.my.id (tombol website + daftar komunitas)\r\n\r\nv2.1.46\r\n\r\n* Fix: domain di kredit Wrapped salah (ryzell.cyou) — diganti jadi ryzellx.my.id (Inggris + Indonesia)\r\n\r\nv2.1.45\r\n\r\n* Fix: cover playlist Wrapped masih \"METROLIST WRAPPED 2025\" — diganti jadi \"LANTUNAN WRAPPED 2026\" (kedua varian terang/gelap), judul tidak tumpang tindih lagi\r\n* Fix: halaman penutup Wrapped masih berterima kasih ke \"MO Agamy\" — diganti jadi Syahdan aka Ryzellx\r\n\r\nv2.1.44\r\n\r\n* Fix: foto artis di Wrapped ga muncul — Wrapped sekarang ambil foto artis dari YouTube kalau di database belum ada (sebelumnya foto cuma keisi kalau artisnya pernah dibuka halamannya), terus disimpan biar ke depannya langsung tampil\r\n\r\nv2.1.43\r\n\r\n* Fix: lirik lagu sering salah lagu (mis. \"Sofia\" tampil lirik lagu lain) — Kugou kini cek judul + artis sebelum ambil lirik, dan nama album tidak lagi ikut di kata kunci pencarian (album bikin ranking pencarian KuGou ngaco)\r\n",
-    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.47"
-  },
-  {
-    "tag": "v2.1.42",
-    "name": "2.1.42",
-    "publishedAt": "2026-11-15T03:21:55Z",
-    "notes": "Released by @Ryzellx\r\n\r\n* Fix: Wrapped crash di halaman penutup (Conclusion) — ikon launcher diganti logo app\r\n* Fix: judul \"Artis/Lagu teratas\" di Wrapped tumpang tindih (lineHeight ketinggalan)\r\n* Fix: Wrapped tampilkan nama artis ngaco (\"Lagu\", \"90 jt pemutaran\") — nama artis palsu dari metadata YouTube Music kini disaring",
-    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.42"
-  },
-  {
-    "tag": "v2.1.41",
-    "name": "2.1.41",
-    "publishedAt": "2026-11-15T02:42:32Z",
-    "notes": "Released by @Ryzellx\r\n\r\n\r\n* Add: Poster Lagu — buat poster lagu dari foto + kartu lagu (seret, cubit, putar, 3 gaya kartu, sparkle, stiker, simpan & bagikan); dibuka dari menu titik tiga di pemutar\r\n* Add: Wrapped 2026 — recap tahunan ala Spotify (kartu di Beranda tampil 1 Nov 2026 – 31 Jan 2027, playlist \"Lantunan 2026\")\r\n\r\n",
-    "url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.41"
   }
 ]

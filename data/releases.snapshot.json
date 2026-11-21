@@ -1,28 +1,28 @@
 {
-  "tag_name": "v2.1.55",
-  "name": "2.1.55",
-  "published_at": "2026-11-20T15:11:45Z",
-  "body": "Lantunan v2.1.55 — lirik lagu yang diputar muncul lewat Dynamic Island (pill melayang di atas layar, ketuk untuk buka player); bikin Poster pindah dari menu player ke Pustaka; Wrapped yang sudah ditonton sampai selesai tidak muncul lagi di Home, pindah ke Pustaka; Pustaka dipisah jadi baris sendiri-sendiri (Playlist, Lagu, Album, Artis, Podcast, Wrapped, Poster); Home menyapa Selamat pagi/siang/sore/malam sesuai jam. Mirror dari Ryzellx/lantunankotlin.",
-  "html_url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.55",
+  "tag_name": "v2.1.59",
+  "name": "2.1.59",
+  "published_at": "2026-11-21T02:44:54Z",
+  "body": "Lantunan v2.1.59 — Dynamic Island lirik dihapus dari aplikasi: pill lirik di dalam aplikasi dan yang melayang di atas aplikasi lain sudah tidak ada lagi. Mirror dari Ryzellx/lantunankotlin.",
+  "html_url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.59",
   "prerelease": false,
   "draft": false,
   "assets": [
     {
       "name": "Lantunan-izzy.apk",
       "size": 27074611,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.55/Lantunan-izzy.apk",
-      "download_count": 1
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.59/Lantunan-izzy.apk",
+      "download_count": 0
     },
     {
       "name": "Lantunan-with-Google-Cast.apk",
-      "size": 28546756,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.55/Lantunan-with-Google-Cast.apk",
-      "download_count": 1
+      "size": 28530372,
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.59/Lantunan-with-Google-Cast.apk",
+      "download_count": 0
     },
     {
       "name": "Lantunan.apk",
       "size": 27078707,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.55/Lantunan.apk",
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.59/Lantunan.apk",
       "download_count": 1
     }
   ]
