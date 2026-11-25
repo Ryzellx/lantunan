@@ -204,3 +204,111 @@ function readChangelogSnapshot(limit: number): ChangelogEntry[] {
     return [];
   }
 }
+
+export type DesktopVariant = {
+  id: 'installer' | 'portable';
+  title: string;
+  label: string;
+  blurb: string;
+  assetName: string;
+  sizeBytes: number | null;
+  url: string | null;
+  available: boolean;
+};
+
+export type DesktopReleaseView = {
+  tag: string;
+  name: string;
+  publishedAt: string | null;
+  releaseUrl: string;
+  variants: DesktopVariant[];
+  source: 'live' | 'snapshot';
+};
+
+const DESKTOP_REPO = 'Ryzellx/lantunandesktop';
+const DESKTOP_API = `https://api.github.com/repos/${DESKTOP_REPO}/releases/latest`;
+
+const DESKTOP_FALLBACK: DesktopReleaseView = {
+  tag: 'v1.0.1',
+  name: 'Lantunan Desktop v1.0.1 — All-in-One Installer',
+  publishedAt: '2026-11-25T10:16:31Z',
+  releaseUrl: `https://github.com/${DESKTOP_REPO}/releases/tag/v1.0.1`,
+  source: 'snapshot',
+  variants: [
+    {
+      id: 'installer',
+      title: 'All-in-One Installer',
+      label: 'Disarankan',
+      blurb: 'Sudah termasuk FFmpeg bawaan, shortcut Desktop & Start Menu, serta uninstaller resmi Windows.',
+      assetName: 'Lantunan-Setup-v1.0.1.exe',
+      sizeBytes: 68775447,
+      url: `https://github.com/${DESKTOP_REPO}/releases/download/v1.0.1/Lantunan-Setup-v1.0.1.exe`,
+      available: true,
+    },
+    {
+      id: 'portable',
+      title: 'Portable (.exe)',
+      label: 'Standalone',
+      blurb: 'Tanpa installer, langsung jalan. Cocok bagi yang sudah memiliki FFmpeg di PATH sistem.',
+      assetName: 'lantunan.exe',
+      sizeBytes: 24680960,
+      url: `https://github.com/${DESKTOP_REPO}/releases/download/v1.0.1/lantunan.exe`,
+      available: true,
+    },
+  ],
+};
+
+function normaliseDesktopRelease(raw: Raw): DesktopReleaseView {
+  const assets: Raw[] = Array.isArray(raw?.assets) ? raw.assets : [];
+  const installer = assets.find((a) => /^lantunan-setup-.*\.exe$/i.test(String(a?.name ?? '')));
+  const portable = assets.find((a) => /^lantunan\.exe$/i.test(String(a?.name ?? '')));
+  const tag = String(raw?.tag_name ?? DESKTOP_FALLBACK.tag);
+
+  return {
+    tag,
+    name: String(raw?.name || tag),
+    publishedAt: raw?.published_at ?? null,
+    releaseUrl: raw?.html_url || `https://github.com/${DESKTOP_REPO}/releases`,
+    source: 'live',
+    variants: [
+      {
+        id: 'installer',
+        title: 'All-in-One Installer',
+        label: 'Disarankan',
+        blurb: 'Sudah termasuk FFmpeg bawaan, shortcut Desktop & Start Menu, serta uninstaller resmi Windows.',
+        assetName: installer ? String(installer.name) : `Lantunan-Setup-${tag}.exe`,
+        sizeBytes: installer ? Number(installer.size) : null,
+        url: installer ? String(installer.browser_download_url) : null,
+        available: Boolean(installer),
+      },
+      {
+        id: 'portable',
+        title: 'Portable (.exe)',
+        label: 'Standalone',
+        blurb: 'Tanpa installer, langsung jalan. Cocok bagi yang sudah memiliki FFmpeg di PATH sistem.',
+        assetName: portable ? String(portable.name) : 'lantunan.exe',
+        sizeBytes: portable ? Number(portable.size) : null,
+        url: portable ? String(portable.browser_download_url) : null,
+        available: Boolean(portable),
+      },
+    ],
+  };
+}
+
+async function loadDesktopLive(): Promise<DesktopReleaseView> {
+  const data = await fetchJson(DESKTOP_API);
+  return normaliseDesktopRelease(data);
+}
+
+export async function getDesktopRelease(): Promise<DesktopReleaseView> {
+  try {
+    const { unstable_cache } = await import('next/cache');
+    const cached = unstable_cache(loadDesktopLive, ['desktop-release-latest'], {
+      revalidate: 300,
+      tags: ['desktop-release'],
+    });
+    return await cached();
+  } catch {
+    return DESKTOP_FALLBACK;
+  }
+}

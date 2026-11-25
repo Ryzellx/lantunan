@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Shot from '@/components/Shot';
 import Reveal from '@/components/Reveal';
-import { getRelease } from '@/lib/release';
+import { getDesktopRelease, getRelease } from '@/lib/release';
 import { formatBytes, formatDate } from '@/lib/format';
 import Hero from '@/components/Hero';
 import FactStrip from '@/components/FactStrip';
 import DownloadBlock from '@/components/DownloadBlock';
+import DesktopDownloadBlock from '@/components/DesktopDownloadBlock';
 import FeatureList from '@/components/FeatureList';
 import FaqList from '@/components/FaqList';
 import showcase from '@/data/showcase.json';
@@ -14,7 +15,7 @@ import styles from './page.module.css';
 export const revalidate = 300;
 
 export default async function Home() {
-  const release = await getRelease();
+  const [release, desktopRelease] = await Promise.all([getRelease(), getDesktopRelease()]);
   const recommended = release.variants.find((v) => v.id === 'foss');
   const teaser = [...showcase.screens].sort((a, b) => a.order - b.order).slice(0, 3);
 
@@ -45,6 +46,9 @@ export default async function Home() {
 
       <div className={`wrap section ${styles.dl}`}>
         <DownloadBlock release={release} />
+        <Reveal>
+          <DesktopDownloadBlock release={desktopRelease} />
+        </Reveal>
       </div>
 
       <Reveal><section className={`wrap section ${styles.showcaseTeaser}`} aria-labelledby="showcase-teaser">

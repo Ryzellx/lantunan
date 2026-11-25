@@ -1,0 +1,130 @@
+.wrap {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.65rem;
+}
+
+.pill {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(200, 162, 255, 0.34);
+  color: var(--accent-strong);
+  font-size: var(--step-1);
+  font-weight: 600;
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.statusRow p { margin: 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  transition:
+    transform 380ms var(--ease-spring),
+    border-color 280ms var(--ease),
+    box-shadow 360ms var(--ease),
+    background-color 280ms var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+  background: var(--surface-2);
+  box-shadow: 0 24px 54px -32px rgba(0, 0, 0, 0.9);
+}
+
+.recommended {
+  background: linear-gradient(160deg, rgba(196, 152, 255, 0.12) 0%, rgba(22, 20, 32, 0.88) 55%);
+  border-color: rgba(200, 162, 255, 0.45);
+  box-shadow:
+    0 24px 60px -34px rgba(176, 134, 255, 0.42),
+    0 1px 0 rgba(255, 255, 255, 0.14) inset;
+}
+
+.recommended:hover {
+  border-color: rgba(220, 194, 255, 0.72);
+  box-shadow:
+    0 30px 68px -28px rgba(186, 146, 255, 0.55),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.head h3 { font-size: var(--step-4); }
+
+.badge,
+.badgeAccent {
+  font-size: var(--step-1);
+  font-weight: 600;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.badgeAccent {
+  background: var(--accent-soft);
+  border-color: rgba(200, 162, 255, 0.48);
+  color: var(--accent-strong);
+}
+
+.blurb {
+  color: var(--muted);
+  font-size: var(--step-2);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.meta {
+  color: var(--muted);
+  margin: 0.1rem 0 0.55rem;
+}
+
+.action {
+  width: 100%;
+  margin-top: auto;
+}
+
+.helper {
+  margin-top: 1.35rem;
+  color: var(--muted);
+  font-size: var(--step-2);
+}
+
+@media (max-width: 720px) {
+  .grid { grid-template-columns: 1fr; }
+}

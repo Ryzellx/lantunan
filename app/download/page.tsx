@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import Shot from '@/components/Shot';
-import { getRelease } from '@/lib/release';
+import { getDesktopRelease, getRelease } from '@/lib/release';
 import { formatBytes } from '@/lib/format';
 import { PERMISSIONS } from '@/lib/site';
 import DownloadBlock from '@/components/DownloadBlock';
+import DesktopDownloadBlock from '@/components/DesktopDownloadBlock';
 import showcaseData from '@/data/showcase.json';
 import VariantPicker from '@/components/VariantPicker';
 import styles from './page.module.css';
@@ -23,19 +24,20 @@ const STEPS = [
 ];
 
 export default async function DownloadPage() {
-  const release = await getRelease();
+  const [release, desktopRelease] = await Promise.all([getRelease(), getDesktopRelease()]);
 
   return (
     <>
       <section className="wrap section">
         <h1>Unduh Lantunan</h1>
         <p className="muted">
-          APK langsung dari GitHub. Tanpa Play Store, tanpa akun, tanpa perantara.
+          Tersedia untuk Android (APK) dan Windows Desktop (All-in-One Installer &amp; Portable) langsung dari GitHub.
         </p>
       </section>
 
       <div className="wrap">
         <DownloadBlock release={release} heading={false} />
+        <DesktopDownloadBlock release={desktopRelease} />
       </div>
 
       <section className="wrap section" aria-labelledby="banding">
