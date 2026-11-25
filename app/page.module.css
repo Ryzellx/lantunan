@@ -1,14 +1,72 @@
-.dl { padding-top: 1rem; }
+.dl { padding-top: 1.25rem; }
+
 .showcaseTeaser { border-top: 1px solid var(--line); }
+
 .teaserHead {
-  display: flex; align-items: baseline; justify-content: space-between;
-  gap: 1rem; margin-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
 }
-.teaserHead a { text-decoration: none; font-size: var(--step-2); }
-.teaserGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.teaserFig { margin: 0; }
-.teaserFig img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
-.teaserFig figcaption { margin-top: 0.5rem; }
-.link { margin-top: 1.5rem; }
+
+.teaserHead a {
+  text-decoration: none;
+  font-size: var(--step-2);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    border-color 240ms var(--ease),
+    background-color 240ms var(--ease),
+    color 240ms var(--ease),
+    transform 300ms var(--ease-spring);
+}
+
+.teaserHead a:hover {
+  color: var(--text);
+  border-color: rgba(200, 162, 255, 0.42);
+  background: var(--accent-soft);
+  transform: translateX(2px);
+}
+
+.teaserGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.teaserFig {
+  margin: 0;
+  transition: transform 400ms var(--ease-spring);
+}
+
+.teaserFig:hover {
+  transform: translateY(-6px);
+}
+
+.teaserFig img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 48px -30px rgba(0, 0, 0, 0.85);
+  transition:
+    border-color 280ms var(--ease),
+    box-shadow 360ms var(--ease);
+}
+
+.teaserFig:hover img {
+  border-color: rgba(200, 162, 255, 0.42);
+  box-shadow: 0 28px 60px -28px rgba(176, 134, 255, 0.42);
+}
+
+.teaserFig figcaption {
+  margin-top: 0.65rem;
+}
+
+.link { margin-top: 1.65rem; }
+
 @media (max-width: 720px) { .teaserGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 420px) { .teaserGrid { grid-template-columns: 1fr; } }

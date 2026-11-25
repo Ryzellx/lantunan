@@ -1,10 +1,25 @@
 .reveal {
   opacity: 0;
-  transform: translateY(18px) scale(0.995);
-  transition: opacity 320ms var(--ease), transform 320ms var(--ease);
-  will-change: opacity, transform;
+  transform: translateY(24px) scale(0.985);
+  filter: blur(4px);
+  transition:
+    opacity 680ms var(--ease),
+    transform 760ms var(--ease),
+    filter 640ms var(--ease);
+  will-change: opacity, transform, filter;
 }
-.isIn { opacity: 1; transform: none; }
+
+.isIn {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
 }

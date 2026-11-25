@@ -1,13 +1,89 @@
-.list { margin-top: 1.5rem; border-top: 1px solid var(--line); }
-.item { border-bottom: 1px solid var(--line); }
-.item summary {
-  cursor: pointer; padding: 1.1rem 2rem 1.1rem 0; position: relative;
-  font-weight: 600; list-style: none;
+.list {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 0.7rem;
 }
-.item summary::-webkit-details-marker { display: none; }
-.item summary::after {
-  content: '+'; position: absolute; right: 0.25rem; top: 0.9rem;
-  color: var(--accent); font-size: var(--step-5); line-height: 1;
+
+.item {
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition:
+    border-color 260ms var(--ease),
+    background-color 260ms var(--ease),
+    box-shadow 300ms var(--ease);
 }
-.item[open] summary::after { content: '-'; }
-.item p { padding-bottom: 1.1rem; margin: 0; max-width: 68ch; }
+
+.item:hover {
+  border-color: var(--line-strong);
+}
+
+.open {
+  border-color: rgba(200, 162, 255, 0.36);
+  background: var(--surface-2);
+  box-shadow: 0 18px 40px -30px rgba(176, 134, 255, 0.32);
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+  padding: 1.15rem 1.35rem;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font-family: inherit;
+  font-size: var(--step-3);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.icon {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+  transition: transform 360ms var(--ease-spring), background-color 260ms var(--ease);
+}
+
+.open .icon {
+  transform: rotate(45deg);
+  background: rgba(200, 162, 255, 0.24);
+}
+
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 380ms var(--ease);
+}
+
+.open .panel {
+  grid-template-rows: 1fr;
+}
+
+.panelInner {
+  overflow: hidden;
+}
+
+.panelInner p {
+  padding: 0 1.35rem 1.25rem;
+  margin: 0;
+  max-width: 68ch;
+  line-height: 1.62;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 300ms var(--ease), transform 300ms var(--ease);
+}
+
+.open .panelInner p {
+  opacity: 1;
+  transform: translateY(0);
+}
