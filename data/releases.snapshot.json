@@ -1,29 +1,29 @@
 {
-  "tag_name": "v2.1.59",
-  "name": "2.1.59",
-  "published_at": "2026-11-21T02:44:54Z",
-  "body": "Lantunan v2.1.59 — Dynamic Island lirik dihapus dari aplikasi: pill lirik di dalam aplikasi dan yang melayang di atas aplikasi lain sudah tidak ada lagi. Mirror dari Ryzellx/lantunankotlin.",
-  "html_url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.59",
+  "tag_name": "v2.1.60",
+  "name": "2.1.60",
+  "published_at": "2026-11-26T12:05:27Z",
+  "body": "Lantunan v2.1.60 — lirik di lockscreen, Dynamic Island kembali, dan pencarian yang lebih bersih.\r\n\r\n- Lirik di lockscreen: saat layar mati dan lagu sedang diputar, lirik muncul di lockscreen — baris yang dinyanyikan tampil besar, lengkap dengan judul, artis, progress, dan tombol pemutar. Geser ke atas untuk menutup.\r\n- Dynamic Island kembali: pill lirik melayang di atas aplikasi lain, ketuk untuk membuka kartu pemutar lengkap.\r\n- Pencarian musik kini tampil lebih bersih tanpa label yang tidak perlu.\r\n- Pengaturan baru di Konten: 'Lirik di lockscreen' (aktif secara default).\r\n\r\nMirror dari Ryzellx/lantunankotlin.",
+  "html_url": "https://github.com/Ryzellx/lantunan-releases/releases/tag/v2.1.60",
   "prerelease": false,
   "draft": false,
   "assets": [
     {
       "name": "Lantunan-izzy.apk",
-      "size": 27074611,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.59/Lantunan-izzy.apk",
-      "download_count": 0
+      "size": 27103339,
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.60/Lantunan-izzy.apk",
+      "download_count": 1
     },
     {
       "name": "Lantunan-with-Google-Cast.apk",
-      "size": 28530372,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.59/Lantunan-with-Google-Cast.apk",
-      "download_count": 0
+      "size": 28575484,
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.60/Lantunan-with-Google-Cast.apk",
+      "download_count": 1
     },
     {
       "name": "Lantunan.apk",
-      "size": 27078707,
-      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.59/Lantunan.apk",
-      "download_count": 3
+      "size": 27103339,
+      "browser_download_url": "https://github.com/Ryzellx/lantunan-releases/releases/download/v2.1.60/Lantunan.apk",
+      "download_count": 1
     }
   ]
 }
